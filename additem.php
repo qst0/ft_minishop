@@ -30,6 +30,7 @@ if (isset($_POST["submit"]))
 	header("Location: error.php");
 	exit();
 }
+include("header.php");
 ?>
 <div class="form">
 	<h2 class="form-header">New Item</h2>
@@ -41,3 +42,4 @@ if (isset($_POST["submit"]))
     <p><input type="submit" name="submit" value="Create"></p>
 	</form>
 </div>
+<?php include("footer.php"); ?>
