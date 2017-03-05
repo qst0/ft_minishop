@@ -3,6 +3,8 @@ session_start();
 include("header.php");
 ?>
 <main class="content">
-<h1>INDEX</h1>
+<?php
+echo '<h2>'.$_SESSION["fname"].' '.$_SESSION["lname"].'</h2>';
+?>
 </main>
 <?php include("footer.php"); ?>

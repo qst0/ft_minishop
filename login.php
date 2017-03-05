@@ -1,35 +1,30 @@
 <?php
 session_start();
-function auth($email, $passwd)
-{
-	if (file_exists("./private/user"))
-	{
-		$passwd = hash("whirlpool", $passwd);
-		$tab = unserialize(file_get_contents("./private/user"));
-		foreach ($tab as $user)
-			if ($email === $user["email"] && $passwd === $user["passwd"])
-				return (TRUE);
-	}
-	return (FALSE);
-}
 
 if (isset($_GET["submit"]))
 {
 	if ($_GET["email"] != "" && $_GET["passwd"] != "")
 	{
+		$email = strtolower($_GET["email"]);
 		$_SESSION["loggued_on_user"] = "";
-		if (auth($_GET["email"], $_GET["passwd"]))
+		if (file_exists("./private/user"))
 		{
-			$_SESSION["loggued_on_user"] = $_GET["email"];
-			header("Location: index.php");
-			exit();
+			$passwd = hash("whirlpool", $_GET["passwd"]);
+			$tab = unserialize(file_get_contents("./private/user"));
+			foreach ($tab as $user)
+				if ($email === $user["email"] && $passwd === $user["passwd"])
+				{
+					$_SESSION["loggued_on_user"] = $email;
+					$_SESSION["fname"] = strtoupper($user["fname"]);
+					$_SESSION["lname"] = strtoupper($user["lname"]);
+					header("Location: index.php");
+					exit();
+				}
 		}
 	}
 	header("Location: error.php");
 	exit();
 }
-
-
 include("header.php");
 ?>
 <div class="login">

@@ -6,7 +6,7 @@ if (isset($_POST["submit"]))
 	{
 		$user["fname"] = $_POST["fname"];
 		$user["lname"] = $_POST["lname"];
-		$user["email"] = $_POST["email"];
+		$user["email"] = strtolower($_POST["email"]);
 		$user["passwd"] = hash("whirlpool", $_POST["passwd"]);
 		if (!file_exists("./private"))
 			mkdir("./private");
