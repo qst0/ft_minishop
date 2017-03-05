@@ -1,5 +1,5 @@
 <div class="footer">
-    myoung | vtenigin
+    myoung •|• vtenigin
 </div>
 </body>
 </html>
