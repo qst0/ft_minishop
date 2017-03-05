@@ -1,27 +1,32 @@
+<div class="items">
 <?php
-if (file_exists("./private/item"))
+if (!file_exists("./private/item"))
+{
+	echo "<h2>Error: No Item Data!</h2>";
+	exit();
+}
+else
 {
 	$items = unserialize(file_get_contents("./private/item"));
 			foreach ($items as $item)
 			{
-				echo "<h2>" . $item["name"] . "</h2>";
+				?>
+				<div class="item">
+					<h2 class="item-header"><?PHP echo $item["name"]; ?></h2>
+					<form class="item-container" action="addtocart.php" method="POST">
+						<img src="
+						<?php if (file_exists($item["path"]))
+								echo $item["path"];
+							else
+								echo "images/metaguy.png";
+						 ?>
+						 "></img>
+						 <input type="hidden" name="item" value="<?php echo $item["name"]; ?>">
+				    <p><input type="submit" name="submit" value="Add to cart"></p>
+					</form>
+				</div>
+				<?php
 			}
 }
-else
-{
-	header("Location: error.php");
-	exit();
-}
 ?>
-<!--
-<div class="form">
-	<h2 class="form-header">New Item</h2>
-	<form id="newitem" class="form-container" action="additem.php" method="POST">
-		<p><input type="text" placeholder="Name" name="name" value=""></p>
-    <p><input type="text" placeholder="picture/path/to/file" name="path" value=""></p>
-    <p><input type="number" min="1" max="42" placeholder="quantity in stock" name="quantity" value=""></p>
-    <p><textarea cols="55" rows="5" name="description" placeholder="Enter a description here..."></textarea></p>
-    <p><input type="submit" name="submit" value="Create"></p>
-	</form>
 </div>
--->
