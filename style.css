@@ -1,0 +1,165 @@
+html {
+	height: 100%;
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body {
+	position: relative;
+	margin: 0;
+	padding-bottom: 6rem;
+	min-height: 100%;
+	background: #EEE;
+	font-size: 1.8rem;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #444;
+	color : white;
+	text-align: center;
+}
+
+.main-header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 6rem;
+	color: white;
+	background: #444;
+	line-height: 6rem;
+	transform: translateY(0);
+	transform: translate3d(0,0,0);
+	transition: .25s transform;
+	backface-visibility: hidden;
+}
+
+.main-header h1 {
+	float: left;
+	font-size: 1.4rem;
+	margin: 0 0 0 2rem;
+	text-transform: uppercase;
+}
+
+.main-header nav {
+	float: right;
+	font-size: 1.4rem;
+}
+
+.main-header nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.main-header nav li {
+	display: inline-block;
+	padding: 0 2rem;
+	border-left: .1rem solid #555;
+}
+
+.main-header a {
+	color: white;
+}
+
+main {
+  padding: 10rem 6rem;
+  background: #EEE;
+}
+
+.login {
+  width: 400px;
+  margin: 200px auto;
+  font-size: 16px;
+}
+
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.login-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: #444;
+}
+
+.login-header {
+  background: #444;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.login-container {
+  background: #888;
+  padding: 12px;
+}
+
+.login p {
+  padding: 12px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type="text"],
+.login input[type="email"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+.login input[type="email"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.login input[type="submit"] {
+  background: #444;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+  background: #555;
+}
+
+/* Buttons' focus effect */
+.login input[type="submit"]:focus {
+  border-color: #black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
