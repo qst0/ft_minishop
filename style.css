@@ -157,7 +157,7 @@ main {
 
 .form {
   width: 400px;
-  margin: 200px auto;
+  margin: 5em auto;
   font-size: 16px;
 }
 
@@ -168,7 +168,7 @@ main {
 }
 
 .form-header {
-  background: #335;
+  background: #D00;
   padding: 20px;
   font-size: 1.2em;
   font-weight: normal;
@@ -271,8 +271,24 @@ main {
   font-size: 0.95em;
 }
 
-.item input[type="text"] {
-  background: #fff;
-  border-color: #bbb;
-  color: #555;
+.item input[type="submit"] {
+  color: #fff;
+	background: #555;
+  cursor: pointer;
+}
+
+.item input[type="submit"]:hover {
+  background: #333;
+}
+
+/* Buttons' focus effect */
+.item input[type="submit"]:focus {
+  border-color: #black;
+}
+
+.remove-item h2{
+	background-color: #eee;
+	width: 30%;
+	margin: 0 auto;
+	text-align: center;
 }

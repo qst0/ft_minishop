@@ -6,7 +6,7 @@ include("header.php");
   <?php
   if($_SESSION["loggued_on_user"] !== "")
   {
-    echo '<h1 class="page-title">'.$_SESSION["fname"].' '.$_SESSION["lname"].'</h2>';
+    echo '<h1 class="page-title">All items</h2>';
   }
   include("items.php");
   include("footer.php");

@@ -49,4 +49,6 @@ include("header.php");
     <p><input type="submit" name="submit" value="Create"></p>
 	</form>
 </div>
-<?php include("footer.php"); ?>
+<?php
+include("removeitem.php");
+include("footer.php"); ?>
