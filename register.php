@@ -9,6 +9,7 @@ if (isset($_POST["submit"]))
 		$user["email"] = strtolower($_POST["email"]);
 		$user["passwd"] = hash("whirlpool", $_POST["passwd"]);
 		$user["admin"] = 0;
+		$user["banned"] = 0;
 		$user["id"] = 0;
 		if (!file_exists("./private"))
 			mkdir("./private");

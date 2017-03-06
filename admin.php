@@ -24,6 +24,9 @@ if (file_exists("./private/user"))
 		echo "<input type='checkbox' name='admin".$user["id"]."' value='admin'";
 		if ($user["admin"])
 			echo " checked";
+		echo "><input type='checkbox' name='banned".$user["id"]."' value='banned'";
+		if ($user["banned"])
+			echo " checked";
 		echo "><input type='submit' name='submit".$user["id"]."' value='apply'>";
 		echo "<input type='submit' name='delete".$user["id"]."' value='delete'></form>";
 	}

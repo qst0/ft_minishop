@@ -12,7 +12,7 @@ if (isset($_POST["submit"]))
 			$passwd = hash("whirlpool", $_POST["passwd"]);
 			$tab = unserialize(file_get_contents("./private/user"));
 			foreach ($tab as $user)
-				if ($email === $user["email"] && $passwd === $user["passwd"])
+				if ($email === $user["email"] && $passwd === $user["passwd"] && !$user["banned"])
 				{
 					$_SESSION["loggued_on_user"] = $email;
 					$_SESSION["fname"] = strtoupper($user["fname"]);
