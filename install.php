@@ -1,9 +1,14 @@
 #!/usr/bin/php
 <?php
+if ($argc != 3)
+{
+  echo "Usage: ./install.php <email> <pass>"
+  exit();
+}
 $user["fname"] = "Admin";
-$user["lname"] = "Istrator";
-$user["email"] = "admin@metahobby.com";
-$user["passwd"] = hash("whirlpool", "password");
+$user["lname"] = "Admin";
+$user["email"] = $argv[1];
+$user["passwd"] = hash("whirlpool", $argv[2]);
 $user["admin"] = 1;
 $user["banned"] = 0;
 $user["id"] = 0;
