@@ -16,6 +16,12 @@ if (isset($_POST["buy"]))
 			}
 	}
 }
+if (isset($_POST["clear"]))
+{
+	unset($_SESSION["cart"]);
+	header("Location: index.php");
+	exit();
+}
 header("Location: error.php");
 	exit();
 ?>
