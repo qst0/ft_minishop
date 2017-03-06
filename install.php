@@ -2,7 +2,7 @@
 <?php
 if ($argc != 3)
 {
-  echo "Usage: ./install.php <email> <pass>"
+  echo "Usage: ./install.php <email> <pass>";
   exit();
 }
 $user["fname"] = "Admin";
