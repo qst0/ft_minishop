@@ -41,6 +41,7 @@ include("footer.php");
 
 <div>
 	<input type="submit" value="Buy" id="buy" name="buy" />
+	<input type="submit" value="clear" name="clear" />
 </div>
 </form>
 

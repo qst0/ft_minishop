@@ -51,7 +51,7 @@ if (file_exists("./private/user"))
 					?>
 					<tr>
 						<td><?PHP echo $item["name"]; ?></td>
-						<td><input type="text" value="1" class="qty" /></td>
+						<td><input type="text" value="1" class="qty" readonly></td>
 						<td><?PHP echo $item["price"]; ?> USD</td>
 					</tr>
 					<?php
