@@ -8,8 +8,17 @@ if (!file_exists("./private/item"))
 else
 {
 	$items = unserialize(file_get_contents("./private/item"));
+	$categories = array();
 			foreach ($items as $item)
 			{
+				if(isset($item['category']))
+				{
+					foreach ($item['category'] as $category)
+					{
+						if(!in_array($category, $categories))
+							$categories[] = $category;
+					}
+				}
 				?>
 				<div class="item">
 					<h2 class="item-header"><?PHP echo $item["name"]; ?></h2>
@@ -29,6 +38,13 @@ else
 				</div>
 				<?php
 			}
+
 }
 ?>
 </div>
+<?php
+foreach ($categories as $category)
+{
+	echo "<h2><a href='category.php?category=$category'>".$category."</a></h2>";
+}
+ ?>

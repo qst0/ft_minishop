@@ -41,3 +41,4 @@ else
 <?php
 include("footer.php");
 ?>
+<h1><a href="index.php">Back to all items</a></h1>
