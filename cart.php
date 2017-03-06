@@ -3,8 +3,15 @@ session_start();
 include("header.php");
 ?>
 <main class="content">
+<form action="buy.php" method="post" id="cart">
+<table>
+<h1 class="page-title">Cart</h1>
+<tr>
+	<th scope="col">Product</th>
+	<th scope="col">Quantity</th>
+	<th scope="col">Price</th>
+</tr>
 <?php
-echo '<h1 class="page-title">Cart</h2>';
 if (!file_exists("./private/item"))
 {
 	echo "<h2>Error: No Item Data!</h2>";
@@ -12,29 +19,44 @@ if (!file_exists("./private/item"))
 }
 else
 {
-	foreach ($_SESSION["cart"] as $item)
+	$sub = 0;
+	for ($i = 0; $i < count($_SESSION["cart"]); $i++)
 	{
+		$item = $_SESSION["cart"][$i];
+		$sub += $item["price"];
 		?>
-		<div class="item">
-			<h2 class="item-header"><?PHP echo $item["name"]; ?></h2>
-			<form class="item-container" action="addtocart.php" method="POST">
-				<h2 class="item-price">$<?PHP echo $item["price"]; ?></h2>
-				<img src="
-				<?php if (file_exists($item["path"]))
-						echo $item["path"];
-					else
-						echo "images/metaguy.png";
-				 ?>
-				 "></img>
-				 <p class='item-description'><?PHP echo $item["description"]; ?></p>
-				 <input type="hidden" name="item" value="<?php echo $item["name"]; ?>">
-			<p><input type="submit" name="submit" value="Add to cart"></p>
-			</form>
-		</div>
-		<?php
+<tr>
+	<td><?PHP echo $item["name"]; ?></td>
+	<td><input type="text" value="1" class="qty" /></td>
+	<td><?PHP echo $item["price"]; ?> USD</td>
+</tr>
+<?php
 	}
+	$_SESSION["cart"]["subtotal"] = $sub;
 }
+include("footer.php");
+?>
+<tr><th>Subtotal: <?php echo $sub." USD"; ?></th><?php  ?></tr>
+</table>
 
-  include("footer.php");
-  ?>
+<div>
+	<input type="submit" value="Buy" id="buy" name="buy" />
+</div>
+</form>
+
 </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

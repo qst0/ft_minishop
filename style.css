@@ -292,3 +292,73 @@ main {
 	margin: 0 auto;
 	text-align: center;
 }
+
+#cart {
+	width: 36em;
+	margin: 2em;
+}
+
+#cart table {
+	width: 100%;
+	border-collapse: collapse;
+	border-bottom: 1px solid #ccc;
+	border-spacing: 0;
+}
+
+#cart table tr{
+
+  background: #f5f5f5;
+
+}
+
+#cart table caption {
+	text-transform: uppercase;
+	text-align: left;
+	padding-bottom: 4px;
+}
+
+#cart table th {
+	text-align: left;
+	padding: 5px;
+	background: #08c;
+	color: #fff;
+	border-left: 1px solid;
+}
+
+#cart table td {
+	padding: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+#cart table td input {
+	font: 1em Arial, sans-serif;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+
+#cart div {
+	margin: 1em 0;
+	text-align: center;
+}
+
+#cart div button {
+	padding: 0.3em 1.2em;
+	background: #08c;
+	color: #fff;
+	display: inline-block;
+	text-decoration: none;
+	margin-right: 0.5em;
+	border: none;
+	font: 1em Arial, sans-serif;
+}
+
+
+
+#cart div input {
+	border: none;
+	padding: 0.3em 1.2em;
+	background: #08c;
+	color: #fff;
+	display: inline-block;
+	font: 1em Arial, sans-serif;
+}

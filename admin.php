@@ -12,8 +12,6 @@ if (file_exists("./private/user"))
 {
 	$tab = unserialize(file_get_contents("./private/user"));
 
-
-
 	foreach ($tab as $user)
 	{
 		echo "<form action='moduser.php' method='POST'>";
@@ -30,22 +28,44 @@ if (file_exists("./private/user"))
 		echo "><input type='submit' name='submit".$user["id"]."' value='apply'>";
 		echo "<input type='submit' name='delete".$user["id"]."' value='delete'></form>";
 	}
-	// foreach ($tab as $user)
-	// {
-	// 	if ($_POST["submit".$user["id"]] === "apply")
-	// 	{
-	// 		$user["email"] = $_POST["email".$user["id"]];
-	// 		$user["fname"] = $_POST["fname".$user["id"]];
-	// 		$user["lname"] = $_POST["lname".$user["id"]];
-	// 		// if (isset($_POST["admin".$user["id"]])
-	// 		// 	$user["admin"] = 1;
-	// 		// else
-	// 		// 	$user["admin"] = 0;
-	// 	}
-	// }
-	// file_put_contents("./private/user", serialize($tab));
+	foreach ($tab as $user)
+	{
+		if ($user["orders"])
+		{
+			?>
+			<h2>User <?php echo $user["email"]?> orders</h2>
+			<?php
+			foreach ($user["orders"] as $order) {
+				?>
+				<form action="delorder.php" method="post">
+				<table>
+				<tr>
+					<th scope="col">Product</th>
+					<th scope="col">Quantity</th>
+					<th scope="col">Price</th>
+				</tr>
+				<?php
+				foreach ($order as $item) {
+				?>
+				<tr>
+					<td><?PHP echo $item["name"]; ?></td>
+					<td><input type="text" value="1" class="qty" /></td>
+					<td><?PHP echo $item["price"]; ?> USD</td>
+				</tr>
+				<?php
+				}
+				?>
+				<tr><th>Subtotal: <?php echo $order["subtotal"]." USD"; ?></th><?php  ?></tr>
+				<input type="submit" value="delete" name="delete" />
+				</table>
+				<?php
+			}
+		}
+	}
 }
 ?>
+
+
 </main>
 <?php include("footer.php"); ?>
 
