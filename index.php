@@ -8,6 +8,9 @@ include("header.php");
   {
     echo '<h1 class="page-title">All items</h2>';
   }
+  else {
+    echo '<h1 class="page-title">Shop now, register to place an order!</h2>';
+  }
   include("items.php");
   include("footer.php");
   ?>

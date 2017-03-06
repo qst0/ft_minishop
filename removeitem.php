@@ -6,10 +6,8 @@ if ($_GET['item'] != "" && file_exists("./private/item"))
   $tab = unserialize(file_get_contents("./private/item"));
   for($i = 0; $i < count($tab); $i++)
   {
-    echo "whichihkkky";
     if ($_GET['item'] == $tab[$i]["name"])
     {
-      echo "WHAT!";
       unset($tab[$i]);
     }
   }
