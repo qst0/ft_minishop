@@ -17,6 +17,7 @@ else
   } // Show Logged in global navigation
 ?>
   <a href="logout.php"><li class="fa fa-sign-out" aria-hidden="true"></li></a>
+  <?php } ?>
   <a href="cart.php"><li class="fa fa-shopping-cart" aria-hidden="true">
 	<?php
 		if ($_SESSION["cart"])
@@ -29,6 +30,3 @@ else
 		}
 	?>
   </li></a>
-<?php
-}
-?>

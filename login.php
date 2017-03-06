@@ -18,6 +18,8 @@ if (isset($_POST["submit"]))
 					$_SESSION["fname"] = strtoupper($user["fname"]);
 					$_SESSION["lname"] = strtoupper($user["lname"]);
 					$_SESSION["admin"] = $user["admin"];
+					if ($user["cart"] && !$_SESSION["cart"])
+						$_SESSION["cart"] = $user["cart"];
 					header("Location: index.php");
 					exit();
 				}
