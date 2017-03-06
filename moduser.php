@@ -16,6 +16,11 @@ if (file_exists("./private/user"))
 			else
 				$user[$i]["admin"] = 0;
 		}
+		if ($_POST["delete".$user[$i]["id"]] == "delete")
+		{
+			unset($user[$i]);
+			$user = array_values($user);
+		}
 	}
 	file_put_contents("./private/user", serialize($user));
 

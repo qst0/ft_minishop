@@ -17,7 +17,7 @@ if (isset($_POST["submit"]))
 			$tab = unserialize(file_get_contents("./private/user"));
 			foreach ($tab as $val)
 			{
-				$user["id"]++;
+				$user["id"] = $val["id"] + 1;
 				if ($user["email"] === $val["email"])
 				{
 					header("Location: error.php");

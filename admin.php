@@ -24,7 +24,8 @@ if (file_exists("./private/user"))
 		echo "<input type='checkbox' name='admin".$user["id"]."' value='admin'";
 		if ($user["admin"])
 			echo " checked";
-		echo "><input type='submit' name='submit".$user["id"]."' value='apply'></form>";
+		echo "><input type='submit' name='submit".$user["id"]."' value='apply'>";
+		echo "<input type='submit' name='delete".$user["id"]."' value='delete'></form>";
 	}
 	// foreach ($tab as $user)
 	// {
