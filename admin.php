@@ -46,18 +46,22 @@ if (file_exists("./private/user"))
 				</tr>
 				<?php
 				foreach ($order as $item) {
-				?>
-				<tr>
-					<td><?PHP echo $item["name"]; ?></td>
-					<td><input type="text" value="1" class="qty" /></td>
-					<td><?PHP echo $item["price"]; ?> USD</td>
-				</tr>
-				<?php
+					if ($item["name"])
+					{
+					?>
+					<tr>
+						<td><?PHP echo $item["name"]; ?></td>
+						<td><input type="text" value="1" class="qty" /></td>
+						<td><?PHP echo $item["price"]; ?> USD</td>
+					</tr>
+					<?php
+					}
 				}
 				?>
 				<tr><th>Subtotal: <?php echo $order["subtotal"]." USD"; ?></th><?php  ?></tr>
-				<input type="submit" value="delete" name="delete" />
 				</table>
+				<!-- <input type="submit" value="delete" name="delete" /> -->
+				</form>
 				<?php
 			}
 		}
